@@ -5,6 +5,11 @@ public class Posicion {
     int fila;
     char columna;
 
+    private Posicion(int fila, char columna){
+        setFila(fila);
+        setColumna(columna);
+    }
+
     public char getColumna() {
         return columna;
     }
@@ -26,5 +31,6 @@ public class Posicion {
         }
         this.fila=fila;
     }
+
 
 }
