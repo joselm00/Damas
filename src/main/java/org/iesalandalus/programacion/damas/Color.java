@@ -5,9 +5,13 @@ public enum Color {
 
     private String cadenaAMostrar;
     private Color(String cadenaAMostrar){
-        this.cadenaAMostrar;
+        this.cadenaAMostrar=cadenaAMostrar;
     }
 
+    @Override
+    public String toString(){
+        return cadenaAMostrar;
+    }
 }
 
 
