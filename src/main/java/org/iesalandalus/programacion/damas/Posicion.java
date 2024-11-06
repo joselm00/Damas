@@ -1,6 +1,6 @@
 package org.iesalandalus.programacion.damas;
 
-public class Posicion {
+public class Posicion{
 
     int fila;
     char columna;
@@ -8,6 +8,14 @@ public class Posicion {
     private Posicion(int fila, char columna){
         setFila(fila);
         setColumna(columna);
+    }
+
+    public Posicion(Posicion otraPosicion) {
+        if (otraPosicion == null) {
+            throw new IllegalArgumentException("La posición no puede ser nula");
+        }
+        this.fila = otraPosicion.fila;
+        this.columna = otraPosicion.columna;
     }
 
     public char getColumna() {
