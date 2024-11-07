@@ -11,7 +11,7 @@ public class Dama {
     public Dama(Color color, Posicion posicion, boolean esDamaEspecial) {
 
         this.color = Color.BLANCO;
-        this.posicion = generarPosicion();
+        this.posicion = crearPosicionInicial();
         this.esDamaEspecial = esDamaEspecial;
     }
 
@@ -46,11 +46,16 @@ public class Dama {
         this.posicion = posicion;
     }
 
-    private Posicion generarPosicion() {
+    private Posicion crearPosicionInicial() {
 
         Random rm = new Random();
-        int filaA = rm.nextInt(3) + 1;
+        int filaA;
         char columna = 'a';
+        if (color==Color.BLANCO){
+            filaA = rm.nextInt(3) + 1;
+        } else {
+            filaA = rm.nextInt(3) + 6;
+        }
         int columnaA = rm.nextInt(4);
         if (filaA % 2 == 1) {
             if (columnaA == 0) {
