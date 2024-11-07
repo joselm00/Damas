@@ -7,7 +7,7 @@ public class Posicion{
     int fila;
     char columna;
 
-    private Posicion(int fila, char columna){
+    public Posicion(int fila, char columna){
         setFila(fila);
         setColumna(columna);
     }
