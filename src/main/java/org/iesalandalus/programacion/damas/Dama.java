@@ -127,9 +127,12 @@ public class Dama {
         if ((color==Color.BLANCO && nuevaFila==8)||(color==Color.NEGRO && nuevaFila==1)){
             esDamaEspecial=true;
         }
-
     }
-
-
-
+    @Override
+    public String toString() {
+        return "Dama{" +
+                "color=" + color +
+                ", posicion=" + posicion +
+                '}';
+    }
 }
