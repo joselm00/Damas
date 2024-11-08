@@ -55,9 +55,11 @@ public class Posicion{
         return Objects.hash(fila, columna);
     }
 
-    public String toString(){
-
-        return "fila-" + fila + ", columna-" + columna;
+    @Override
+    public String toString() {
+        return "Posicion{" +
+                "fila=" + fila +
+                ", columna=" + columna +
+                '}';
     }
-
 }

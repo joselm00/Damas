@@ -1,5 +1,6 @@
 package org.iesalandalus.programacion.damas;
 
+import javax.naming.OperationNotSupportedException;
 import java.util.Random;
 
 public class Dama {
@@ -80,4 +81,55 @@ public class Dama {
         }
            return new Posicion(filaA,columna);
     }
+
+    private void mover(Direccion direccion, int pasos) throws OperationNotSupportedException {
+        if (direccion==null){
+            throw new NullPointerException("ERROR: La dirrecion erronea");
+        }
+        if (pasos<1){
+            throw new IllegalArgumentException("ERROR: pasos erroneos");
+        }
+        if (!esDamaEspecial){
+
+            if ((color==Color.BLANCO && (direccion!=Direccion.NOROESTE && direccion!=Direccion.NORESTE))||(color==Color.NEGRO && (direccion!=Direccion.SUROESTE && direccion!=Direccion.SURESTE))){
+                    throw new OperationNotSupportedException("ERROR: movimiento no permitido para damas no especiales");
+            }
+                pasos=1;
+        }
+
+        int nuevaFila=posicion.getFila();
+        char nuevaColumna=posicion.getColumna();
+
+        switch (direccion){
+
+            case NORESTE -> {
+                nuevaFila+=pasos;
+                nuevaColumna=(char) (nuevaColumna + pasos);
+            }
+            case NOROESTE ->{
+                nuevaFila+=pasos;
+                nuevaColumna=(char) (nuevaColumna - pasos);
+            }
+            case SURESTE -> {
+                nuevaFila-=pasos;
+                nuevaColumna=(char) (nuevaColumna + pasos);
+            }
+            case SUROESTE -> {
+                nuevaFila-=pasos;
+                nuevaColumna=(char) (nuevaColumna - pasos);
+            }
+        }
+        if (nuevaFila<1 || nuevaFila>8 || nuevaColumna<'a' || nuevaColumna>'h'){
+            throw new OperationNotSupportedException("ERROR: movimiento no permitido");
+        }
+
+        posicion=new Posicion(nuevaFila, nuevaColumna);
+        if ((color==Color.BLANCO && nuevaFila==8)||(color==Color.NEGRO && nuevaFila==1)){
+            esDamaEspecial=true;
+        }
+
+    }
+
+
+
 }
