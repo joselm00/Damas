@@ -52,4 +52,37 @@ public class Consola {
             System.out.println("Mover hacia Noroeste.4");
 
     }
+
+    public static Direccion elegirDireccion(){
+        int opcion=0;
+        do {
+            System.out.println("Elige la direccion (1-4)");
+             entrada.nextInt();
+             while (!entrada.hasNextInt()){
+                 System.out.println("ERROR, debes ingresar un numero entre 1 y 4");
+                 entrada.next();
+                 System.out.println("Elige la direccion (1-4)");
+             }
+            opcion= entrada.nextInt();
+        }while (opcion<=0 || opcion>4);
+
+        switch (opcion){
+
+            case 1 -> {
+                return Direccion.SURESTE;
+            }
+            case 2 -> {
+                return Direccion.SUROESTE;
+            }
+            case 3 -> {
+                return Direccion.NORESTE;
+            }
+            case 4 -> {
+                return Direccion.NOROESTE;
+            }
+            default -> {
+                return null;
+            }
+        }
+    }
 }
