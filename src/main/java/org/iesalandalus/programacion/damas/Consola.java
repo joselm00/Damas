@@ -8,6 +8,7 @@ public class Consola {
 
     private Consola() {
 
+
     }
 
     public static void mostrarMenu(){
@@ -33,5 +34,14 @@ public class Consola {
         return opcion;
     }
 
+    public static Color elegirOpcion(){
+        Color color = null;
+
+        do {
+            System.out.println("Introduzca el color Blanco o Negro.");
+        }while (color!=Color.BLANCO || color!=Color.NEGRO);
+
+        return color;
+    }
 
 }
