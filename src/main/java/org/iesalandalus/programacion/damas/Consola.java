@@ -101,5 +101,7 @@ public class Consola {
 
         return pasos;
     }
-
+    private static void despedida(){
+        System.out.println("Gracias por utilizar la app, hasta pronto.");
+    }
 }
