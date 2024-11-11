@@ -85,4 +85,21 @@ public class Consola {
             }
         }
     }
+
+    public static int elegirPasos(){
+        int pasos=0;
+        do {
+            System.out.println("Elige el numero de pasos minimos");
+            entrada.nextInt();
+            while (!entrada.hasNextInt()){
+                System.out.println("ERROR, debes ingresar un numero entero positivo mayor o igual a 1");
+                entrada.next();
+                System.out.println("Elige el numero de pasos minimos");
+            }
+            pasos = entrada.nextInt();
+        }while (pasos<1);
+
+        return pasos;
+    }
+
 }
