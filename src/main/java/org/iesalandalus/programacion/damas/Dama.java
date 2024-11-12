@@ -22,6 +22,16 @@ public class Dama {
         this.esDamaEspecial = false;
     }
 
+    public Dama(Color color) {
+        this.color = color;
+        if (color == Color.BLANCO) {
+            this.posicion = new Posicion(1, 'a');
+        } else {
+            this.posicion = new Posicion(8, 'h');
+        }
+        this.esDamaEspecial = false;
+    }
+
     public Color getColor() {
         return color;
     }
