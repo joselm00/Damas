@@ -16,6 +16,12 @@ public class Dama {
         this.esDamaEspecial = esDamaEspecial;
     }
 
+    public Dama() {
+        this.color = Color.BLANCO;
+        this.posicion = new Posicion(1, 'a');
+        this.esDamaEspecial = false;
+    }
+
     public Color getColor() {
         return color;
     }

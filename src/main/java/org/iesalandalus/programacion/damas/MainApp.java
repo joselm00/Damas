@@ -12,7 +12,7 @@ public class MainApp {
         switch (opcion){
 
             case 1 -> {
-                System.out.println("Crear dama por defecto");
+                crearDamaDefecto();
             }
             case 2 -> {
                 System.out.println("Nuevo dama color");
@@ -31,6 +31,10 @@ public class MainApp {
         }
     }
 
+    private static void crearDamaDefecto(){
+        dama= new Dama();
+        System.out.println("Dama creada con los valores por defecto:" + dama.getColor() + ", " + dama.getPosicion() );
+    }
 
 
 
